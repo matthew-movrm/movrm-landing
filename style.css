@@ -1,3 +1,4 @@
+/* Base styling */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -6,27 +7,38 @@ body {
   line-height: 1.6;
 }
 
+/* Typography */
 h1, h2, .tagline, .slogan {
   font-family: 'League Spartan', sans-serif;
   color: #FFFFFF;
 }
 
+/* Header section */
 header.hero {
   text-align: center;
   padding: 4rem 2rem;
+  padding-bottom: 2rem; /* Reduced space below header */
   background-color: #FF2D95;
 }
 
+/* Logo styling – larger and tighter spacing */
 .logo {
-  max-width: 120px;
-  margin-bottom: 1rem;
+  max-width: 180px; /* Increased size */
+  margin-bottom: 0.5rem; /* Reduced gap below logo */
 }
 
+/* Adjust spacing between logo and title */
+header.hero h1 {
+  margin-top: 0.5rem;
+}
+
+/* Tagline under the title */
 .tagline {
   font-size: 1.25rem;
   margin-bottom: 2rem;
 }
 
+/* CTA button styling */
 .cta-button {
   background-color: #FFFFFF;
   color: #FF2D95;
@@ -43,18 +55,25 @@ header.hero {
   background-color: #fce2ee;
 }
 
+/* About and Signup sections */
 section.about, section.signup {
   padding: 2rem;
   max-width: 700px;
-  margin: auto;
+  margin: 0 auto;
 }
 
+section.about {
+  margin-top: 0rem; /* Pull section closer to CTA button */
+}
+
+/* Signup form layout */
 .signup form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
+/* Input & Button styling */
 .signup input, .signup button {
   padding: 0.75rem;
   border: 1px solid white;
@@ -64,10 +83,12 @@ section.about, section.signup {
   color: white;
 }
 
+/* Placeholder styling */
 .signup input::placeholder {
   color: #ffffffaa;
 }
 
+/* Form button */
 .signup button {
   background-color: white;
   color: #FF2D95;
@@ -81,6 +102,7 @@ section.about, section.signup {
   background-color: #fce2ee;
 }
 
+/* Footer */
 footer {
   text-align: center;
   padding: 2rem;
