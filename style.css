@@ -1,20 +1,20 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #ffffff;
-  color: #333;
+  background-color: #FF2D95;
+  color: #FFFFFF;
   line-height: 1.6;
 }
 
 h1, h2, .tagline, .slogan {
   font-family: 'League Spartan', sans-serif;
-  color: #FF2D95;
+  color: #FFFFFF;
 }
 
 header.hero {
   text-align: center;
   padding: 4rem 2rem;
-  background: #fff;
+  background-color: #FF2D95;
 }
 
 .logo {
@@ -28,12 +28,19 @@ header.hero {
 }
 
 .cta-button {
-  background-color: #FF2D95;
-  color: white;
+  background-color: #FFFFFF;
+  color: #FF2D95;
   padding: 0.75rem 1.5rem;
   text-decoration: none;
   font-weight: bold;
   border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #fce2ee;
 }
 
 section.about, section.signup {
@@ -50,26 +57,33 @@ section.about, section.signup {
 
 .signup input, .signup button {
   padding: 0.75rem;
-  border: 1px solid #ccc;
+  border: 1px solid white;
   border-radius: 4px;
   font-size: 1rem;
+  background-color: transparent;
+  color: white;
+}
+
+.signup input::placeholder {
+  color: #ffffffaa;
 }
 
 .signup button {
-  background-color: #FF2D95;
-  color: white;
-  border: none;
-  cursor: pointer;
+  background-color: white;
+  color: #FF2D95;
   font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border: none;
 }
 
 .signup button:hover {
-  opacity: 0.9;
+  background-color: #fce2ee;
 }
 
 footer {
   text-align: center;
   padding: 2rem;
   font-size: 0.9rem;
-  color: #666;
+  color: #FFFFFF;
 }
