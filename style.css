@@ -1,3 +1,8 @@
+/* Global variables */
+:root {
+  --gap: 2rem; /* consistent spacing between elements */
+}
+
 /* Base styling */
 body {
   margin: 0;
@@ -16,35 +21,35 @@ h1, h2, .tagline, .slogan {
 /* Header section */
 header.hero {
   text-align: center;
-  padding: 2rem 1.5rem; /* Reduced padding */
+  padding: 2rem 1.5rem;
   background-color: #FF2D95;
 }
 
-/* Logo styling – larger, responsive, no added height */
+/* Logo styling – doubled size */
 .logo {
-  max-width: 360px;
+  max-width: 720px;
   width: 100%;
   height: auto;
-  margin-bottom: 0.2rem; /* Reduced gap below logo */
+  margin: 0 auto;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: calc(var(--gap) * 1.5); /* 1.5x gap below logo */
 }
 
-/* Adjust spacing between logo and title */
+/* Title styling – "Mind Over Matter" */
 header.hero h1 {
-  margin-top: 0.25rem;
-  font-size: 3rem; /* Larger main title */
+  font-size: 3rem;
+  margin-top: 0;
+  margin-bottom: calc(var(--gap) * 1.5); /* 1.5x gap below title */
 }
 
-/* Tagline under the title */
+/* Subtitle styling – "Where Motivation Meets Movement" */
 .tagline {
-  font-size: 1.5rem; /* Larger subtitle */
-  margin-top: 0.5rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: calc(var(--gap) * 1.5); /* 1.5x gap below subtitle */
 }
 
-/* CTA button styling – now larger */
+/* CTA button – "Join the Waiting List" */
 .cta-button {
   background-color: #FFFFFF;
   color: #FF2D95;
@@ -53,34 +58,43 @@ header.hero h1 {
   font-weight: bold;
   border-radius: 5px;
   border: none;
-  font-size: 1.25rem; /* Increased font size */
+  font-size: 1.25rem;
   transition: background-color 0.2s ease;
   display: inline-block;
-  margin-top: 1rem;
+  margin-top: 0;
+  margin-bottom: calc(var(--gap) * 1.5); /* 1.5x gap below button */
 }
 
 .cta-button:hover {
   background-color: #fce2ee;
 }
 
-/* About and Signup sections */
-section.about, section.signup {
-  padding: 1.5rem 1.5rem;
+/* Shared section styling */
+section.about,
+section.signup {
+  padding: 1.5rem;
   max-width: 700px;
-  margin: 1.5rem auto 0 auto; /* Reduced spacing around sections */
+  margin: 0 auto;
 }
 
 /* About section spacing */
 section.about {
-  margin-top: 1rem; /* Pulls section closer to CTA */
+  margin-top: 0;
 }
 
-/* Section headings consistent size */
-section.about h2,
+/* About title styling – left aligned */
+section.about h2 {
+  font-size: 2rem;
+  margin-bottom: var(--gap);
+  text-align: left;
+}
+
+/* Signup title styling – left aligned and consistent spacing */
 section.signup h2 {
-  font-size: 2rem; /* Larger section titles for consistency */
-  margin-bottom: 1rem;
-  text-align: center;
+  font-size: 2rem;
+  margin-top: calc(var(--gap) * 1.5); /* consistent top spacing */
+  margin-bottom: var(--gap);
+  text-align: left;
 }
 
 /* Signup form layout */
@@ -92,7 +106,8 @@ section.signup h2 {
 }
 
 /* Input & Button styling */
-.signup input, .signup button {
+.signup input,
+.signup button {
   padding: 0.75rem;
   border: 1px solid white;
   border-radius: 4px;
@@ -106,7 +121,7 @@ section.signup h2 {
   color: #ffffffaa;
 }
 
-/* Form button */
+/* Submit button styling */
 .signup button {
   background-color: white;
   color: #FF2D95;
