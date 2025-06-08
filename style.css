@@ -1,15 +1,16 @@
-/* Global variables */
 :root {
-  --gap: 2rem; /* consistent spacing between elements */
+  --gap: 1.5rem;
+  --max-width: 90%;
 }
 
-/* Base styling */
+/* Base styling (mobile-first) */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #FF2D95;
   color: #FFFFFF;
   line-height: 1.6;
+  padding: 0;
 }
 
 /* Typography */
@@ -21,35 +22,35 @@ h1, h2, .tagline, .slogan {
 /* Header section */
 header.hero {
   text-align: center;
-  padding: 2rem 1.5rem;
+  padding: 2rem 1rem;
   background-color: #FF2D95;
 }
 
-/* Logo styling – doubled size */
+/* Logo */
 .logo {
-  max-width: 720px;
+  max-width: 280px;
   width: 100%;
   height: auto;
   margin: 0 auto;
   display: block;
-  margin-bottom: calc(var(--gap) * 1.5); /* 1.5x gap below logo */
+  margin-bottom: calc(var(--gap) * 1.5);
 }
 
-/* Title styling – "Mind Over Matter" */
+/* Title */
 header.hero h1 {
-  font-size: 3rem;
+  font-size: 2rem;
   margin-top: 0;
-  margin-bottom: calc(var(--gap) * 1.5); /* 1.5x gap below title */
+  margin-bottom: calc(var(--gap) * 1.5);
 }
 
-/* Subtitle styling – "Where Motivation Meets Movement" */
+/* Subtitle */
 .tagline {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-top: 0;
-  margin-bottom: calc(var(--gap) * 1.5); /* 1.5x gap below subtitle */
+  margin-bottom: calc(var(--gap) * 1.5);
 }
 
-/* CTA button – "Join the Waiting List" */
+/* CTA Button */
 .cta-button {
   background-color: #FFFFFF;
   color: #FF2D95;
@@ -58,46 +59,45 @@ header.hero h1 {
   font-weight: bold;
   border-radius: 5px;
   border: none;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   transition: background-color 0.2s ease;
   display: inline-block;
   margin-top: 0;
-  margin-bottom: calc(var(--gap) * 1.5); /* 1.5x gap below button */
+  margin-bottom: calc(var(--gap) * 1.5);
 }
 
 .cta-button:hover {
   background-color: #fce2ee;
 }
 
-/* Shared section styling */
+/* Section Layout */
 section.about,
 section.signup {
-  padding: 1.5rem;
-  max-width: 700px;
+  padding: 1.5rem 1rem;
+  max-width: var(--max-width);
   margin: 0 auto;
 }
 
-/* About section spacing */
+/* About Section */
 section.about {
   margin-top: 0;
 }
 
-/* About title styling – left aligned */
 section.about h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: var(--gap);
   text-align: left;
 }
 
-/* Signup title styling – left aligned and consistent spacing */
+/* Signup Section */
 section.signup h2 {
-  font-size: 2rem;
-  margin-top: calc(var(--gap) * 1.5); /* consistent top spacing */
+  font-size: 1.5rem;
+  margin-top: calc(var(--gap) * 1.5);
   margin-bottom: var(--gap);
   text-align: left;
 }
 
-/* Signup form layout */
+/* Form Layout */
 .signup form {
   display: flex;
   flex-direction: column;
@@ -105,7 +105,6 @@ section.signup h2 {
   margin-top: 1rem;
 }
 
-/* Input & Button styling */
 .signup input,
 .signup button {
   padding: 0.75rem;
@@ -114,14 +113,15 @@ section.signup h2 {
   font-size: 1rem;
   background-color: transparent;
   color: white;
+  width: 100%;
 }
 
-/* Placeholder styling */
+/* Input Placeholder */
 .signup input::placeholder {
   color: #ffffffaa;
 }
 
-/* Submit button styling */
+/* Form Submit Button */
 .signup button {
   background-color: white;
   color: #FF2D95;
@@ -129,7 +129,7 @@ section.signup h2 {
   cursor: pointer;
   transition: background-color 0.2s ease;
   border: none;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   padding: 1rem;
 }
 
@@ -143,4 +143,37 @@ footer {
   padding: 2rem 1rem;
   font-size: 0.9rem;
   color: #FFFFFF;
+}
+
+/* Desktop/tablet improvements */
+@media screen and (min-width: 768px) {
+  :root {
+    --gap: 2rem;
+    --max-width: 700px;
+  }
+
+  .logo {
+    max-width: 480px;
+  }
+
+  header.hero h1 {
+    font-size: 3rem;
+  }
+
+  .tagline {
+    font-size: 1.5rem;
+  }
+
+  .cta-button {
+    font-size: 1.25rem;
+  }
+
+  section.about h2,
+  section.signup h2 {
+    font-size: 2rem;
+  }
+
+  .signup button {
+    font-size: 1.25rem;
+  }
 }
