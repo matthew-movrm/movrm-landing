@@ -126,12 +126,10 @@ section.signup h2 {
   width: 100%;
 }
 
-/* Input Placeholder */
 .signup input::placeholder {
   color: #ffffffaa;
 }
 
-/* Form Submit Button */
 .signup button {
   background-color: white;
   color: #FF2D95;
@@ -153,6 +151,46 @@ footer {
   padding: 2rem 1rem;
   font-size: 0.9rem;
   color: #FFFFFF;
+}
+
+/* Workflow Section */
+.workflow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: var(--gap) auto;
+  text-align: center;
+  gap: 1rem;
+  max-width: 700px;
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #FFFFFF;
+}
+
+.workflow-step {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  min-width: 120px;
+}
+
+.workflow-arrow {
+  font-size: 1.5rem;
+  color: #FFFFFF;
+}
+
+/* Mobile stacking */
+@media screen and (max-width: 500px) {
+  .workflow {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .workflow-arrow {
+    transform: rotate(90deg);
+  }
 }
 
 /* Desktop/tablet improvements */
@@ -191,3 +229,4 @@ footer {
     font-size: 1.25rem;
   }
 }
+
