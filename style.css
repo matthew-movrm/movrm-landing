@@ -21,10 +21,12 @@ header.hero {
   background-color: #FF2D95;
 }
 
-/* Logo styling – larger and tighter spacing */
+/* Logo styling – larger and responsive */
 .logo {
-  max-width: 180px; /* Increased size */
-  margin-bottom: 0.5rem; /* Reduced gap below logo */
+  max-width: 360px; /* doubled size */
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.5rem; /* reduced space below logo */
 }
 
 /* Adjust spacing between logo and title */
@@ -90,22 +92,4 @@ section.about {
 
 /* Form button */
 .signup button {
-  background-color: white;
-  color: #FF2D95;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  border: none;
-}
-
-.signup button:hover {
-  background-color: #fce2ee;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 2rem;
-  font-size: 0.9rem;
-  color: #FFFFFF;
-}
+  background-c
