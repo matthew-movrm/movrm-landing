@@ -11,19 +11,35 @@ body {
   color: #FFFFFF;
   line-height: 1.6;
   padding: 0;
+  overflow-x: hidden;
 }
 
-/* Typography */
 h1, h2, .slogan {
   font-family: 'League Spartan', sans-serif;
   color: #FFFFFF;
 }
 
-/* Header section */
+/* Header */
 header.hero {
   text-align: center;
-  padding: 2rem 1rem;
-  background-color: #FF2D95;
+  position: relative;
+  padding: 4rem 1.5rem 3rem;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+  z-index: 0;
+}
+
+header.hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* Logo */
@@ -31,83 +47,114 @@ header.hero {
   max-width: 280px;
   width: 100%;
   height: auto;
-  margin: 0 auto;
+  margin: 0 auto var(--gap);
   display: block;
-  margin-bottom: var(--gap);
 }
 
-/* Main title */
+/* Headline */
 header.hero h1 {
-  font-size: 1.9rem;
-  margin-top: 0;
-  margin-bottom: var(--gap);
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0 0 var(--gap) 0;
+  line-height: 1.2;
 }
 
-/* Tagline (split into two lines) */
+/* Tagline block */
 .tagline {
   margin-bottom: var(--gap);
 }
 
 .tagline-line-1 {
   font-size: 1.2rem;
-  font-weight: bold;
-  text-align: center;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
 }
 
 .tagline-line-2 {
   font-size: 1.1rem;
-  text-align: center;
-  margin-top: 0.5rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-/* CTA Button */
+/* CTA button */
 .cta-button {
-  background-color: #FFFFFF;
+  background-color: white;
   color: #FF2D95;
-  padding: 1rem 2rem;
-  text-decoration: none;
+  padding: 1rem 2.25rem;
+  font-size: 1.2rem;
   font-weight: bold;
-  border-radius: 5px;
+  border-radius: 8px;
   border: none;
-  font-size: 1.1rem;
-  transition: background-color 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: inline-block;
-  margin-top: 0;
-  margin-bottom: var(--gap);
+  margin-top: var(--gap);
 }
 
 .cta-button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
   background-color: #fce2ee;
 }
 
-/* Section Layout */
-section.about,
-section.signup {
+/* About & Signup sections (same as before) */
+section.about, section.signup {
   padding: 1.5rem 1rem;
   max-width: var(--max-width);
   margin: 0 auto;
 }
 
-/* About Section */
-section.about {
-  margin-top: 0;
-}
-
-section.about h2 {
-  font-size: 1.5rem;
-  margin-bottom: var(--gap);
-  text-align: left;
-}
-
-/* Signup Section */
+section.about h2,
 section.signup h2 {
   font-size: 1.5rem;
-  margin-top: var(--gap);
   margin-bottom: var(--gap);
   text-align: left;
 }
 
-/* Form Layout */
+/* Workflow section */
+.workflow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: var(--gap) auto;
+  text-align: center;
+  gap: 0.75rem;
+  max-width: 700px;
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.workflow-step {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  min-width: 100px;
+  flex-shrink: 1;
+}
+
+.workflow-arrow {
+  font-size: 1.2rem;
+  flex-shrink: 1;
+}
+
+@media screen and (max-width: 500px) {
+  .workflow {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .workflow-arrow {
+    transform: rotate(90deg);
+  }
+}
+
+/* Join form */
 .signup form {
   display: flex;
   flex-direction: column;
@@ -134,7 +181,6 @@ section.signup h2 {
   background-color: white;
   color: #FF2D95;
   font-weight: bold;
-  cursor: pointer;
   transition: background-color 0.2s ease;
   border: none;
   font-size: 1.1rem;
@@ -153,49 +199,28 @@ footer {
   color: #FFFFFF;
 }
 
-/* Workflow Section */
-.workflow {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin: var(--gap) auto;
-  text-align: center;
-  gap: 0.75rem;
-  max-width: 700px;
-  font-family: 'League Spartan', sans-serif;
-  font-weight: 600;
-  font-size: 1.05rem;
-  color: #FFFFFF;
+/* Fade-in Animations */
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
 }
 
-.workflow-step {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0.5rem 0.75rem;
-  border-radius: 8px;
-  min-width: 100px;
-  flex-shrink: 1;
-}
+.fade-in.delay-1 { animation-delay: 0.2s; }
+.fade-in.delay-2 { animation-delay: 0.4s; }
+.fade-in.delay-3 { animation-delay: 0.6s; }
 
-.workflow-arrow {
-  font-size: 1.2rem;
-  color: #FFFFFF;
-  flex-shrink: 1;
-}
-
-/* Mobile stacking */
-@media screen and (max-width: 500px) {
-  .workflow {
-    flex-direction: column;
-    gap: 0.5rem;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
   }
-
-  .workflow-arrow {
-    transform: rotate(90deg);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* Desktop/tablet improvements */
+/* Desktop Enhancements */
 @media screen and (min-width: 768px) {
   :root {
     --gap: 2rem;
@@ -207,11 +232,11 @@ footer {
   }
 
   header.hero h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 
   .tagline-line-1 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .tagline-line-2 {
@@ -219,16 +244,12 @@ footer {
   }
 
   .cta-button {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
   }
 
   section.about h2,
   section.signup h2 {
     font-size: 2rem;
-  }
-
-  .signup button {
-    font-size: 1.25rem;
   }
 
   .workflow {
@@ -238,12 +259,10 @@ footer {
 
   .workflow-step {
     min-width: auto;
-    padding: 0.5rem 0.75rem;
     font-size: 1rem;
   }
 
   .workflow-arrow {
-    font-size: 1.2rem;
     margin: 0 0.25rem;
   }
 }
