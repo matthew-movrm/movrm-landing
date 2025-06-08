@@ -14,7 +14,7 @@ body {
 }
 
 /* Typography */
-h1, h2, .tagline, .slogan {
+h1, h2, .slogan {
   font-family: 'League Spartan', sans-serif;
   color: #FFFFFF;
 }
@@ -33,21 +33,31 @@ header.hero {
   height: auto;
   margin: 0 auto;
   display: block;
-  margin-bottom: calc(var(--gap) * 1.5);
+  margin-bottom: var(--gap);
 }
 
-/* Title */
+/* Main title */
 header.hero h1 {
-  font-size: 2rem;
+  font-size: 1.9rem;
   margin-top: 0;
-  margin-bottom: calc(var(--gap) * 1.5);
+  margin-bottom: var(--gap);
 }
 
-/* Subtitle */
+/* Tagline (split into two lines) */
 .tagline {
+  margin-bottom: var(--gap);
+}
+
+.tagline-line-1 {
   font-size: 1.2rem;
-  margin-top: 0;
-  margin-bottom: calc(var(--gap) * 1.5);
+  font-weight: bold;
+  text-align: center;
+}
+
+.tagline-line-2 {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-top: 0.5rem;
 }
 
 /* CTA Button */
@@ -63,7 +73,7 @@ header.hero h1 {
   transition: background-color 0.2s ease;
   display: inline-block;
   margin-top: 0;
-  margin-bottom: calc(var(--gap) * 1.5);
+  margin-bottom: var(--gap);
 }
 
 .cta-button:hover {
@@ -92,7 +102,7 @@ section.about h2 {
 /* Signup Section */
 section.signup h2 {
   font-size: 1.5rem;
-  margin-top: calc(var(--gap) * 1.5);
+  margin-top: var(--gap);
   margin-bottom: var(--gap);
   text-align: left;
 }
@@ -157,11 +167,15 @@ footer {
   }
 
   header.hero h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
-  .tagline {
+  .tagline-line-1 {
     font-size: 1.5rem;
+  }
+
+  .tagline-line-2 {
+    font-size: 1.25rem;
   }
 
   .cta-button {
